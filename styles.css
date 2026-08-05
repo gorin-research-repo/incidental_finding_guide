@@ -1,14 +1,14 @@
 :root {
-  --ink: #172d2b;
-  --ink-soft: #526462;
-  --teal-950: #073c39;
-  --teal-900: #0b4f4a;
-  --teal-700: #14726a;
-  --teal-100: #dcefeb;
-  --teal-50: #eff8f6;
-  --cream: #f8f6f0;
+  --ink: #374151;
+  --ink-soft: #6b7280;
+  --teal-950: #1e3a8a;
+  --teal-900: #1d4ed8;
+  --teal-700: #2563eb;
+  --teal-100: #dbeafe;
+  --teal-50: #eff6ff;
+  --cream: #f8fafc;
   --paper: #fff;
-  --line: #dbe3e1;
+  --line: #e5e7eb;
   --amber: #a8610a;
   --amber-bg: #fff8e8;
   --blue: #315d89;
@@ -17,8 +17,8 @@
   --green-bg: #edf8f1;
   --red: #9f3b3b;
   --red-bg: #fff2f1;
-  --shadow: 0 16px 42px rgba(16, 53, 49, 0.08);
-  --radius: 18px;
+  --shadow: 0 12px 36px rgba(30, 58, 138, 0.07);
+  --radius: 12px;
 }
 
 * {
@@ -32,8 +32,11 @@ html {
 body {
   margin: 0;
   color: var(--ink);
-  background: var(--cream);
-  font-family: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at 4% 16%, rgba(251, 146, 60, 0.08), transparent 24rem),
+    radial-gradient(circle at 96% 24%, rgba(37, 99, 235, 0.08), transparent 28rem),
+    var(--cream);
+  font-family: "Helvetica Neue", Arial, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -77,11 +80,15 @@ svg {
 }
 
 .site-header {
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 10;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  color: white;
-  background: var(--teal-950);
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.96);
+  border-top: 4px solid var(--teal-700);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 2px 8px rgba(30, 58, 138, 0.04);
+  backdrop-filter: blur(12px);
 }
 
 .header-inner {
@@ -98,14 +105,13 @@ svg {
   gap: 10px;
   color: inherit;
   text-decoration: none;
-  font-family: "Manrope", sans-serif;
   font-size: 20px;
   font-weight: 800;
   letter-spacing: -0.035em;
 }
 
 .brand > span:last-child > span {
-  color: #70d0bd;
+  color: var(--teal-700);
 }
 
 .brand-mark {
@@ -114,44 +120,49 @@ svg {
   display: grid;
   place-items: center;
   color: white;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
+  background: var(--teal-700);
+  border-radius: 50%;
+  font-size: 19px;
+  font-weight: 800;
 }
 
-.brand-mark svg {
-  width: 20px;
-  height: 20px;
-  stroke-width: 1.45;
-}
-
-.home-link {
-  display: inline-flex;
+.site-nav {
+  display: flex;
   align-items: center;
-  gap: 7px;
-  color: rgba(255, 255, 255, 0.82);
+  gap: 8px;
+}
+
+.site-nav a {
+  padding: 9px 13px;
+  color: #4b5563;
   text-decoration: none;
   font-size: 14px;
   font-weight: 600;
-  transition: color 160ms ease;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  transition:
+    color 160ms ease,
+    background 160ms ease,
+    border-color 160ms ease;
 }
 
-.home-link:hover {
-  color: white;
+.site-nav a:hover {
+  color: var(--teal-700);
+  background: var(--teal-50);
 }
 
-.home-link svg {
-  width: 18px;
-  height: 18px;
+.site-nav a.active {
+  color: var(--teal-700);
+  border-color: #bfdbfe;
 }
 
 .hero {
   position: relative;
   overflow: hidden;
-  color: white;
+  color: var(--ink);
   background:
-    radial-gradient(circle at 84% 25%, rgba(50, 170, 149, 0.24), transparent 30%),
-    linear-gradient(135deg, var(--teal-950), var(--teal-900));
+    radial-gradient(circle at 82% 20%, rgba(37, 99, 235, 0.12), transparent 32%),
+    linear-gradient(135deg, #ffffff, #eff6ff);
 }
 
 .hero::after {
@@ -161,11 +172,11 @@ svg {
   bottom: -210px;
   width: 420px;
   height: 420px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.08);
   border-radius: 50%;
   box-shadow:
-    0 0 0 58px rgba(255, 255, 255, 0.025),
-    0 0 0 116px rgba(255, 255, 255, 0.018);
+    0 0 0 58px rgba(37, 99, 235, 0.025),
+    0 0 0 116px rgba(37, 99, 235, 0.018);
 }
 
 .hero-inner {
@@ -179,7 +190,7 @@ svg {
   align-items: center;
   gap: 8px;
   margin-bottom: 18px;
-  color: #8ee0d0;
+  color: var(--teal-700);
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -189,7 +200,7 @@ svg {
 .hero h1 {
   max-width: 720px;
   margin: 0;
-  font-family: "Manrope", sans-serif;
+  color: var(--teal-700);
   font-size: clamp(38px, 6vw, 62px);
   line-height: 1.05;
   letter-spacing: -0.05em;
@@ -198,7 +209,7 @@ svg {
 .hero-copy {
   max-width: 610px;
   margin: 20px 0 0;
-  color: rgba(255, 255, 255, 0.76);
+  color: var(--ink-soft);
   font-size: 18px;
   line-height: 1.6;
 }
@@ -208,7 +219,7 @@ svg {
   flex-wrap: wrap;
   gap: 12px 28px;
   margin-top: 30px;
-  color: rgba(255, 255, 255, 0.72);
+  color: #4b5563;
   font-size: 13px;
   font-weight: 500;
 }
@@ -222,7 +233,7 @@ svg {
 .hero-meta svg {
   width: 17px;
   height: 17px;
-  color: #8ee0d0;
+  color: var(--teal-700);
 }
 
 .main-grid {
@@ -268,7 +279,6 @@ svg {
 .result-header h2,
 .references-heading h3 {
   margin: 0;
-  font-family: "Manrope", sans-serif;
   letter-spacing: -0.025em;
 }
 
@@ -398,7 +408,6 @@ svg {
 
 .empty-state h2 {
   margin: 0;
-  font-family: "Manrope", sans-serif;
   font-size: 20px;
 }
 
@@ -730,9 +739,41 @@ svg {
   color: white;
 }
 
+.footer-brand .brand-mark {
+  color: var(--teal-950);
+  background: white;
+}
+
+.footer-brand > span:last-child > span {
+  color: #93c5fd;
+}
+
 .footer-inner > div > p {
   margin: 10px 0 0;
   font-size: 13px;
+}
+
+.footer-right {
+  display: grid;
+  justify-items: end;
+  gap: 12px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .copyright {
@@ -749,7 +790,7 @@ svg {
   color: white;
   background: var(--teal-950);
   border-radius: 9px;
-  box-shadow: 0 12px 28px rgba(7, 60, 57, 0.24);
+  box-shadow: 0 12px 28px rgba(30, 58, 138, 0.24);
   opacity: 0;
   pointer-events: none;
   transform: translateY(12px);
@@ -799,13 +840,8 @@ svg {
     height: 32px;
   }
 
-  .home-link {
-    font-size: 0;
-  }
-
-  .home-link::after {
-    content: "Tools";
-    font-size: 13px;
+  .site-nav {
+    display: none;
   }
 
   .hero-inner {
@@ -866,6 +902,10 @@ svg {
     align-items: flex-start;
     justify-content: center;
     gap: 24px;
+  }
+
+  .footer-right {
+    justify-items: start;
   }
 }
 

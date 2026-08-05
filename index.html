@@ -7,14 +7,8 @@
       name="description"
       content="A clinician-focused quick-reference guide for common incidental findings on cross-sectional imaging."
     />
-    <meta name="theme-color" content="#0b4f4a" />
+    <meta name="theme-color" content="#2563eb" />
     <title>Incidental Findings Guide | AugmentedMD</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -23,20 +17,14 @@
     <header class="site-header">
       <div class="shell header-inner">
         <a class="brand" href="https://augmentedmd.tools" aria-label="AugmentedMD home">
-          <span class="brand-mark" aria-hidden="true">
-            <svg viewBox="0 0 32 32" role="img">
-              <path d="M16 3v26M3 16h26" />
-              <path d="M8 8l16 16M24 8L8 24" />
-            </svg>
-          </span>
+          <span class="brand-mark" aria-hidden="true">A</span>
           <span>Augmented<span>MD</span></span>
         </a>
-        <a class="home-link" href="https://augmentedmd.tools">
-          <svg viewBox="0 0 20 20" aria-hidden="true">
-            <path d="m12.5 15-5-5 5-5" />
-          </svg>
-          All clinical tools
-        </a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a class="active" href="https://augmentedmd.tools/#tools">Tools</a>
+          <a href="https://augmentedmd.tools/#about">About</a>
+          <a href="https://augmentedmd.tools/#contact">Contact</a>
+        </nav>
       </div>
     </header>
 
@@ -243,17 +231,19 @@
       <div class="shell footer-inner">
         <div>
           <a class="brand footer-brand" href="https://augmentedmd.tools">
-            <span class="brand-mark" aria-hidden="true">
-              <svg viewBox="0 0 32 32">
-                <path d="M16 3v26M3 16h26" />
-                <path d="M8 8l16 16M24 8L8 24" />
-              </svg>
-            </span>
+            <span class="brand-mark" aria-hidden="true">A</span>
             <span>Augmented<span>MD</span></span>
           </a>
           <p>Practical, privacy-first tools for clinicians.</p>
         </div>
-        <p class="copyright">© <span id="year"></span> AugmentedMD · For educational use</p>
+        <div class="footer-right">
+          <div class="footer-links">
+            <a href="https://github.com/gorin-research-repo">GitHub</a>
+            <a href="https://twitter.com/AugmentedMD">Twitter</a>
+            <a href="https://twitter.com/AugmentedMD">@AugmentedMD</a>
+          </div>
+          <p class="copyright">© <span id="year"></span> AugmentedMD · For educational use</p>
+        </div>
       </div>
     </footer>
 
