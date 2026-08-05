@@ -1,25 +1,41 @@
 :root {
+  --blue: #2055a1;
+  --navy: #15306b;
+  --teal: #06abeb;
+  --text: #33475a;
   --ink: #1f1f38;
-  --ink-soft: #5c707a;
-  --teal-950: #15306b;
-  --teal-900: #2055a1;
-  --teal-700: #2055a1;
-  --teal-100: #c9d9ec;
-  --teal-50: #eef4fb;
-  --cream: #ffffff;
-  --paper: #ffffff;
-  --line: #c9d9ec;
+  --card: #eef4fb;
+  --border: #c9d9ec;
+  --white: #ffffff;
+  --muted: #5c707a;
+  --green: #1b7f5a;
+  --green-bg: #e6f7f0;
+  --brand-gradient: linear-gradient(90deg, #15306b 0%, #2a6fc0 55%, #06abeb 100%);
+  --font-sans: "Helvetica Neue", Arial, system-ui, sans-serif;
+  --font-mono: "Courier New", ui-monospace, monospace;
+  --radius-card: 12px;
+  --radius-btn: 10px;
+  --radius-pill: 999px;
+  --shadow-card: 0 12px 30px rgba(27, 42, 74, 0.1);
+  --shadow-hover: 0 16px 40px rgba(27, 42, 74, 0.15);
+
+  /* Component aliases keep the clinical guide styles tied to brand tokens. */
+  --ink-soft: var(--muted);
+  --teal-950: var(--navy);
+  --teal-900: var(--blue);
+  --teal-700: var(--blue);
+  --teal-100: var(--border);
+  --teal-50: var(--card);
+  --cream: var(--white);
+  --paper: var(--white);
+  --line: var(--border);
   --amber: #a8610a;
   --amber-bg: #fff8e8;
-  --blue: #2055a1;
-  --blue-bg: #eef4fb;
-  --green: #27684e;
-  --green-bg: #edf8f1;
+  --blue-bg: var(--card);
   --red: #9f3b3b;
   --red-bg: #fff2f1;
-  --shadow: 0 12px 30px rgba(27, 42, 74, 0.1);
-  --radius: 12px;
-  --brand-gradient: linear-gradient(90deg, #15306b 0%, #2a6fc0 55%, #06abeb 100%);
+  --shadow: var(--shadow-card);
+  --radius: var(--radius-card);
 }
 
 * {
@@ -36,10 +52,17 @@ body {
   background-color: var(--paper);
   background-image: radial-gradient(#e4e9f2 1px, transparent 1px);
   background-size: 18px 18px;
-  font-family: "Helvetica Neue", Arial, system-ui, sans-serif;
+  font-family: var(--font-sans);
   font-size: 16px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--blue);
+  font-weight: 700;
 }
 
 button,
@@ -178,32 +201,35 @@ svg {
 .hero-copy {
   max-width: 680px;
   margin: 24px auto;
-  color: #33475a;
+  color: var(--text);
   font-size: 18px;
   line-height: 1.6;
 }
 
-.hero-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px 28px;
-  justify-content: center;
-  margin-top: 28px;
-  color: var(--ink-soft);
-  font-size: 13px;
-  font-weight: 500;
+.cta {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 14px 28px;
+  color: var(--white);
+  background: var(--blue);
+  border: 0;
+  border-radius: var(--radius-btn);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    background 200ms ease,
+    box-shadow 200ms ease,
+    transform 200ms ease;
 }
 
-.hero-meta span {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-}
-
-.hero-meta svg {
-  width: 17px;
-  height: 17px;
-  color: var(--teal-700);
+.cta:hover {
+  color: var(--white);
+  background: var(--navy);
+  box-shadow: 0 8px 20px rgba(32, 85, 161, 0.3);
+  text-decoration: none;
+  transform: translateY(-2px);
 }
 
 .main-grid {
@@ -451,8 +477,8 @@ svg {
   display: flex;
   gap: 17px;
   margin-top: 24px;
-  background: var(--green-bg);
-  border-color: #cfe7d7;
+  background: var(--card);
+  border-color: var(--border);
 }
 
 .action-card.urgent {
@@ -471,9 +497,9 @@ svg {
   flex: 0 0 auto;
   display: grid;
   place-items: center;
-  color: var(--green);
+  color: var(--blue);
   background: rgba(255, 255, 255, 0.74);
-  border: 1px solid rgba(39, 104, 78, 0.16);
+  border: 1px solid var(--border);
   border-radius: 10px;
 }
 
@@ -781,39 +807,6 @@ svg {
 }
 
 @media (max-width: 760px) {
-  .shell {
-    width: calc(100% - 32px);
-  }
-
-  .header-inner {
-    min-height: 64px;
-    padding: 0 16px;
-  }
-
-  .brand {
-    font-size: 18px;
-  }
-
-  .brand-mark {
-    width: 32px;
-    height: 32px;
-  }
-
-  .hero-inner {
-    margin: 48px auto;
-    padding: 0;
-  }
-
-  .hero-copy {
-    font-size: 16px;
-  }
-
-  .hero-meta {
-    display: grid;
-    gap: 9px;
-    margin-top: 24px;
-  }
-
   .main-grid {
     gap: 18px;
     padding-block: 0 50px;
@@ -850,6 +843,22 @@ svg {
 
   .action-copy {
     font-size: 16px;
+  }
+}
+
+@media (max-width: 620px) {
+  .shell {
+    width: calc(100% - 32px);
+  }
+
+  .header-inner {
+    min-height: 64px;
+    padding: 0 16px;
+  }
+
+  .hero-inner {
+    margin: 48px auto;
+    padding: 0;
   }
 
   .site-footer {
@@ -892,7 +901,7 @@ svg {
 
 @media print {
   .site-header,
-  .hero-meta,
+  .cta,
   .selector-card,
   .empty-state,
   .clinical-note,
