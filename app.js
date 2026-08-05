@@ -215,5 +215,4 @@
 
   populateOrgans();
   restoreFromUrl();
-  document.querySelector("#year").textContent = new Date().getFullYear();
 })();
