@@ -732,8 +732,13 @@ svg {
 }
 
 .site-footer {
-  min-height: 80px;
+  padding: 28px max(24px, 5vw);
+  color: #c7d4ea;
   background: var(--teal-950);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 13px;
 }
 
 .toast {
