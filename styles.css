@@ -197,32 +197,6 @@ svg {
   line-height: 1.6;
 }
 
-.cta {
-  display: inline-block;
-  margin-top: 8px;
-  padding: 14px 28px;
-  color: var(--white);
-  background: var(--blue);
-  border: 0;
-  border-radius: var(--radius-btn);
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 700;
-  text-decoration: none;
-  transition:
-    background 200ms ease,
-    box-shadow 200ms ease,
-    transform 200ms ease;
-}
-
-.cta:hover {
-  color: var(--white);
-  background: var(--navy);
-  box-shadow: 0 8px 20px rgba(32, 85, 161, 0.3);
-  text-decoration: none;
-  transform: translateY(-2px);
-}
-
 .main-grid {
   display: grid;
   gap: 24px;
@@ -850,7 +824,6 @@ svg {
 
 @media print {
   .site-header,
-  .cta,
   .selector-card,
   .empty-state,
   .clinical-note,
